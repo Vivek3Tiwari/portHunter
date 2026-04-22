@@ -46,6 +46,12 @@ def validate_ip(target_ip):
 
 
 def _run_nmap_scan(target_ip):
+    if nmap is None:
+    return {
+        "host_ip": target_ip,
+        "status": "mock",
+        "open_ports": []
+    }
     """Run Nmap scan and return structured results."""
     scanner = nmap.PortScanner()
     arguments = f"-sV -T4 --host-timeout {SCAN_TIMEOUT_SECONDS}s"
