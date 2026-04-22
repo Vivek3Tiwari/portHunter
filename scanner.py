@@ -5,7 +5,10 @@ from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeou
 from datetime import datetime, timezone
 from pathlib import Path
 
-import nmap
+try:
+    import nmap
+except:
+    nmap = None
 
 
 # Constants
