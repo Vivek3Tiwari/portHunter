@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortHunter - Network Vulnerability Detector</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <main class="page-shell">
+
+        <!-- 🔥 HERO SECTION -->
+        <section class="hero-panel">
+            <div class="hero-copy">
+                <p class="eyebrow">Cybersecurity Monitoring Console</p>
+                <h1>PortHunter - Network Vulnerability Detector</h1>
+                <p class="hero-text">
+                    Scan a target host, review open ports, and inspect active services through
+                    a clean frontend designed for rapid security checks.
+                </p>
+            </div>
+
+            <!-- 🔹 INPUT CARD -->
+            <div class="scan-card">
+                <label class="input-label" for="target-ip">Target IP Address</label>
+
+                <div class="scan-form">
+                    <input
+                        type="text"
+                        id="target-ip"
+                        placeholder="e.g. 127.0.0.1"
+                        autocomplete="off"
+                    >
+                    <button id="scan-button" type="button">Scan</button>
+                </div>
+
+                <p class="hint-text">
+                    Connected to the active Flask backend
+                </p>
+            </div>
+        </section>
+
+        <!-- 🔥 STATUS + RESULT SECTION -->
+        <section class="status-panel">
+
+            <div id="loading" class="loading hidden">
+                Scanning target and collecting port intelligence...
+            </div>
+
+            <div id="message" class="message hidden"></div>
+
+            <article id="results-card" class="results-card hidden">
+
+                <div class="results-header">
+                    <h2>Scan Results</h2>
+                    <span id="status-badge" class="status-badge">Unknown</span>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-label">Host IP</span>
+                        <span id="host-ip" class="result-value">-</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="result-label">Timestamp</span>
+                        <span id="timestamp" class="result-value">-</span>
+                    </div>
+                </div>
+
+                <div class="ports-section">
+                    <h3>Open Ports</h3>
+                    <ul id="open-ports" class="ports-list"></ul>
+                </div>
+
+            </article>
+        </section>
+
+        <!-- 🔥 HISTORY SECTION -->
+        <section class="history-panel">
+            <h2>Scan History</h2>
+            <div id="history"></div>
+        </section>
+
+    </main>
+
+    <!-- JS -->
+    <script src="/script.js"></script>
+</body>
+</html>
